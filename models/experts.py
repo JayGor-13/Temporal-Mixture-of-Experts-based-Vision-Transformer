@@ -116,9 +116,8 @@ class QA_AlignedExpert(Expert):
         )
         
     def forward(self, x: torch.Tensor, **kwargs):
-        avg_question_embedding = kwargs['avg_question_embedding']
-        avg_question_embedding_expanded = avg_question_embedding.expand(x.size(0), -1)
-        combined_input = torch.cat([x, avg_question_embedding_expanded], dim=-1)
+        avg_question_embedding_for_expert = kwargs['avg_question_embedding_for_expert']
+        combined_input = torch.cat([x, avg_question_embedding_for_expert], dim=-1)
         return self.net(combined_input)
 
 class FastChangeExpert(Expert):
