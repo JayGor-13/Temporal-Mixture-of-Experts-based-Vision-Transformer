@@ -8,8 +8,8 @@ from transformers import AutoTokenizer
 # Importing all the custom modular components
 from .experts import GenericExpert, MotionExpert, TextureExpert, QA_AlignedExpert, FastChangeExpert
 from .router import Router
-from .attention_karm import MultiHeadSelfAttention
-from .prediction_head_karm import PredictionHead
+from .attention import MultiHeadSelfAttention
+from .prediction_head import PredictionHead
 
 class MoEFeedForward(nn.Module):
     """
