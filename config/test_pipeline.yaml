@@ -1,0 +1,47 @@
+# config/test_pipeline.yaml
+
+# This is a special configuration for a fast pipeline test.
+# It uses very small batches and a small number of epochs.
+
+project_name: "temporal-moe-vit-TEST"
+run_name: "pipeline_smoke_test"
+
+model:
+  # Using smaller model parameters for a faster test
+  embed_dim: 256
+  num_layers: 2
+  num_heads: 4
+  video_patch_size: 16
+  num_answer_classes: 1000 # This will be updated by the data loader
+  text_seq_len: 32
+  frames_per_video: 8 # Fewer frames for speed
+
+  moe:
+    num_experts: 4 # Fewer experts
+    top_k: 2
+    experts:
+      motion: { flow_dim: 64 }
+      fast_change: { delta_dim: 32 }
+      texture: { channels: 3 }
+
+data:
+  dataset_name: "msvd-qa-test"
+  # IMPORTANT: This must be the SAME path as your real dataset
+  data_root: "D:/Karm/Projects/datasets/msvd_qa"
+  batch_size: 2 # VERY small batch size for testing
+  num_workers: 0
+  text_tokenizer: "bert-base-uncased"
+  # This split is ignored by our test script, but good to have
+  train_val_test_split: [0.7, 0.1, 0.2] 
+
+training:
+  epochs: 2 # Just 2 epochs to prove it runs
+  optimizer: "AdamW"
+  learning_rate: 1.0e-4
+  weight_decay: 0.05
+  loss_alpha: 0.01
+  device: "cuda"
+
+logging:
+  # Save test checkpoints to a separate directory to avoid overwriting real ones
+  checkpoint_dir: "checkpoints_test/" 
