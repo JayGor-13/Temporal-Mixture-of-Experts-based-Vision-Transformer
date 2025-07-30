@@ -27,7 +27,7 @@ data:
   # <<<<< MOST IMPORTANT: MAKE SURE THIS PATH IS CORRECT >>>>>
   data_root: "D:/Karm/Projects/datasets/msvd_qa"
   batch_size: 16
-  num_workers: 0 
+  num_workers: 8 
   text_tokenizer: "bert-base-uncased"
   # NEW: Defines how to split the data for a proper experiment
   train_val_test_split: [0.7, 0.1, 0.2] 
