@@ -30,7 +30,7 @@ if __name__ == '__main__':
     
     optimizer = torch.optim.AdamW(model.parameters(), lr=config.training.learning_rate, weight_decay=config.training.weight_decay)
 
-    # The new Trainer will automatically print params and plot at the end
+    # The new Trainer will automatically print complexity analysis and plot history
     trainer = Trainer(config, model, optimizer, train_loader, val_loader)
     trainer.train()
     
