@@ -27,9 +27,3 @@ Our proposed architecture integrates a heterogeneous Mixture-of-Experts block di
 -   **Efficient & Scalable Training:** We leverage a training strategy with auxiliary load-balancing losses to ensure stable convergence and efficient utilization of all experts.
 -   **State-of-the-Art Performance:** We demonstrate that TemporalMoE-ViT can outperform a standard dense Vision Transformer baseline in both accuracy and computational efficiency on video-language benchmarks.
 
-## Setup and Installation
-
-**1. Clone the repository:**
-```bash
-git clone https://github.com/your-username/TemporalMoE-ViT.git
-cd TemporalMoE-ViT
