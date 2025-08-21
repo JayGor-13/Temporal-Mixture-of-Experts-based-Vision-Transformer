@@ -1,8 +1,9 @@
 # TemporalMoE-ViT: A Heterogeneous Mixture-of-Experts Architecture for Unified Video Reasoning
 
-[![arXiv](https://img.shields.io/badge/arXiv-24XX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/24XX.XXXXX) <!-- TODO: Replace with your actual arXiv link -->
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/release/python-390/)
+[![PyTorch 1.10+](https://img.shields.io/badge/pytorch-1.10%2B-EE4C2C.svg)](https://pytorch.org/get-started/locally/)
+[![Transformers AutoTokenizer](https://img.shields.io/badge/Transformers-AutoTokenizer-44A8B3.svg)](https://huggingface.co/docs/transformers/main_classes/tokenizer)
+
 
 This repository contains the official PyTorch implementation for the paper: **"TemporalMoE-ViT: A Heterogeneous Mixture-of-Experts Architecture for Unified Video Reasoning"**.
 
@@ -15,7 +16,7 @@ Our proposed architecture integrates a heterogeneous Mixture-of-Experts block di
 <!-- TODO: Insert your architecture diagram image here -->
 <!-- Example: ![Architecture Diagram](assets/architecture_diagram.png) -->
 <p align="center">
-  <img src="path/to/your/diagram.png" width="800">
+  <img src="moevit_architecture.jpg" width="800">
 </p>
 
 **Figure 1: High-level overview of the TemporalMoE-ViT framework.** The model takes joint video and text input, passes it through a stack of our novel `TemporalMoEBlock` layers, and produces a final prediction. The key novelty is the routing of tokens to a diverse pool of architecturally specialized experts.
